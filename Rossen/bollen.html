@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bol {
+            border-radius: 50%;
+            position: absolute;
+            text-align: center;
+        }
+
+        #container {
+            width: 1000px;
+            height: 1000px;
+            padding: auto;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container"></div>
+    <script>
+        let bollen = [
+            {
+                radius: "100",
+                color: "aqua",
+                bordercolor: "purple",
+                fontsize: "17",
+                x: "250",
+                y: "50"
+            },
+            {
+                radius: "150",
+                color: "yellow",
+                bordercolor: "purple",
+                fontsize: "30",
+                x: "100",
+                y: "100"
+            },
+            {
+                radius: "70",
+                color: "blue",
+                bordercolor: "purple",
+                fontsize: "30",
+                x: "200",
+                y: "290"
+            },
+            {
+                radius: "40",
+                color: "green",
+                bordercolor: "purple",
+                fontsize: "30",
+                x: "300",
+                y: "300"
+            },
+            {
+                radius: "300",
+                color: "red",
+                bordercolor: "purple",
+                fontsize: "30",
+                x: "400",
+                y: "400"
+            }
+
+        ]
+        for (let i = 0; i < bollen.length; i++) {
+            let bolElement = document.createElement("div");
+            container.appendChild(bolElement);
+            bolElement.className = "bol";
+            bolElement.style.width = bollen[i].radius + "px";
+            bolElement.style.height = bollen[i].radius + "px"
+            bolElement.style.borderRadius = bollen[i].straal / 2 + "px";
+            bolElement.style.backgroundColor = bollen[i].color;
+            bolElement.style.border = "2px solid " + bollen[i].bordercolor;
+            bolElement.style.fontsize = bollen[i].fontsize + "px";
+            bolElement.style.top = bollen[i].x + "px";
+            bolElement.style.left = bollen[i].y + "px";
+            bolElement.innerHTML = [i + 1   ];
+            bolElement.style.lineHeight = bollen[i].radius + "px";
+            bolElement.style.fontSize = bollen[i].radius + "px";
+        }
+    </script>
+</body>
+
+</html>
