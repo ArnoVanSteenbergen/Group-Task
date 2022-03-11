@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kleurboek</title>
+    <style>
+        #container {
+            margin-left: auto;
+            margin-right: auto;
+            width: 500px;
+            height: 500px;
+        }
+
+        .cell {
+            border: 1px solid grey;
+            float: left;
+            width: 18px;
+            height: 18px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container"></div>
+
+    <script>
+        let container = document.querySelector('#container');
+
+        for (let i = 0; i < 25; i++) {
+            for (let i = 0; i < 25; i++) {
+                let el = document.createElement("div");
+                el.className = "cell";
+                el.addEventListener("mouseover", handleHover);
+                container.appendChild(el);
+            }
+        }
+
+        function handleHover(event) { event.target.style.backgroundColor = "black"; }
+
+    </script>
+</body>
+
+</html>

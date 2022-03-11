@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bollen</title>
+    <style>
+        #container {
+            width: 500px;
+            height: 500px;
+            position: relative;
+        }
+
+        .bol {
+            position : absolute;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container"></div>
+
+    <script>
+        let container = document.querySelector("#container");
+        let lineHeight = 100;
+        let myData = [
+            {
+                straal: 100,
+                color: "yellow",
+                border: "green",
+                fontSize: 80,
+                x: 200,
+                y: 300
+            }, {
+                straal: 200,
+                color: "red",
+                border: "green",
+                fontSize: 150,
+                x: 300,
+                y: 200
+            }, {
+                straal: 40,
+                color: "blue",
+                border: "green",
+                fontSize: 40,
+                x: 400,
+                y: 100
+            }, {
+                straal: 100,
+                color: "purple",
+                border: "yellow",
+                fontSize: 80,
+                x: 200,
+                y: 150
+            }, {
+                straal: 50,
+                color: "grey",
+                border: "pink",
+                fontSize: 20,
+                x: 400,
+                y: 450
+            },
+        ];
+        for (let i = 0; i < myData.length; i++) {
+            let el = document.createElement("div");
+            el.style.width = 100 + "px";
+            el.style.height = 100 + "px"; 
+            el.style.borderRadius = (myData[i].straal / 2) + "px";
+            el.style.backgroundColor = myData[i].color;
+            el.style.border = "2px solid " + myData[i].border;
+            el.style.fontSize = myData[i].fontSize + "px";
+            el.style.lineHeight = myData[i].lineHeight + "px";
+            el.style.left = myData[i].x + "px";
+            el.style.top = myData[i].y + "px";
+            el.className = "bol";
+            el.innerHTML = i;
+            el.style.width = myData[i].straal + "px";
+            el.style.height = myData[i].straal + "px";
+            el.style.lineHeight = myData[i].straal + "px";
+            container.appendChild(el);
+        }
+    </script>
+</body>
+
+</html>
